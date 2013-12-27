@@ -1,0 +1,25 @@
+<h1>Test#test4</h1>
+<p>Find me in app/views/test/test4.html.erb</p>
+
+<pre>
+<%= request.env['HTTP_COOKIE'] %>
+</pre>
+
+<!-- this script cause error because other4's access controll host is * -->
+<script type="text/javascript">
+jQuery(function($){
+  $.ajax("<%= @other_url %>/test/other4", {
+    xhrFields: {
+      withCredentials: true
+    }
+  }).done(function(data, textStatus, jqXHR){
+    alert(textStatus);
+    $('#res').html(data);
+  }).fail(function(jqXHR, textStatus, errorThrown){
+    alert(textStatus);
+  });
+});
+</script>
+
+<div id="res">
+</div>

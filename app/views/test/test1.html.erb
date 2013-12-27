@@ -1,0 +1,20 @@
+<h1>Test#test1</h1>
+<p>Find me in app/views/test/test1.html.erb</p>
+
+<pre>
+<%= request.env['HTTP_COOKIE'] %>
+</pre>
+
+<!-- this script will be success -->
+<script type="text/javascript">
+jQuery(function($){
+  $.ajax('/test/same1', {
+  }).done(function(data, textStatus, jqXHR){
+    alert(textStatus);
+    $('#res').html(data);
+  })
+});
+</script>
+
+<div id="res">
+</div>

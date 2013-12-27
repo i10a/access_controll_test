@@ -1,0 +1,22 @@
+<h1>Test#test3</h1>
+<p>Find me in app/views/test/test3.html.erb</p>
+
+<pre>
+<%= request.env['HTTP_COOKIE'] %>
+</pre>
+
+<!-- this script will be success, but no credentials send to 'other3' -->
+<script type="text/javascript">
+jQuery(function($){
+  $.ajax("<%= @other_url %>/test/other3", {
+  }).done(function(data, textStatus, jqXHR){
+    alert(textStatus);
+    $('#res').html(data);
+  }).fail(function(jqXHR, textStatus, errorThrown){
+    alert(textStatus);
+  });
+});
+</script>
+
+<div id="res">
+</div>
